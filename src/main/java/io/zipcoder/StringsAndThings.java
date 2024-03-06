@@ -35,7 +35,8 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+
+        return base.replace(remove,"");
     }
 
     /**
