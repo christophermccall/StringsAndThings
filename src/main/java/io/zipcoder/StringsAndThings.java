@@ -50,20 +50,20 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        int isCount=0;
-        int notCount=0;
+    public Boolean containsEqualNumberOfIsAndNot(String input) {
+        int isCount = 0;
+        int notCount = 0;
         int i = 0;
-        while(i<input.length()){
-        if(input.charAt(i)=='i' && input.charAt(i+1)=='s'){
-            isCount++;
-        } else if(input.charAt(i)=='n' &&input.charAt(i+1)=='o' &&input.charAt(i+2)=='t'){
-            notCount++;
-        }
-        i++;
-
+        while (i < input.length()-1) {
+            if ((input.charAt(i) == 'i') && (input.charAt(i + 1)) == 's') {
+                isCount+=1;
+            } else if (input.charAt(i) == 'n' && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 't') {
+                notCount+=1;
+            }
+            i++;
         }
         return isCount == notCount;
+    }
        /*
        int isCount = 0;
         int notCount = 0;
@@ -81,7 +81,7 @@ public class StringsAndThings {
             }
         }
                 */
-    }
+
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
@@ -95,9 +95,10 @@ public class StringsAndThings {
         int gCount = 0;
         int j = 0;
         while(j<input.length()){
-            if(input.charAt(j)=='g')
-                gCount+=1;
-                j++;
+            if(input.charAt(j)=='g') {
+                gCount += 1;
+            }
+            j++;
         }
         int happyGs = 0;
         int i = 0;
