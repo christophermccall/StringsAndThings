@@ -1,6 +1,9 @@
 package io.zipcoder;
 
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author tariq
  */
@@ -48,7 +51,36 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        int isCount=0;
+        int notCount=0;
+        int i = 0;
+        while(i<input.length()){
+        if(input.charAt(i)=='i' && input.charAt(i+1)=='s'){
+            isCount++;
+        } else if(input.charAt(i)=='n' &&input.charAt(i+1)=='o' &&input.charAt(i+2)=='t'){
+            notCount++;
+        }
+        i++;
+
+        }
+        return isCount == notCount;
+       /*
+       int isCount = 0;
+        int notCount = 0;
+        String is= "is";
+        String not= "not";
+        int i =0;
+        int j = 0;
+        while(i>-1||j>-1){
+            if(input.indexOf(is,i)!=-1){
+                isCount++;
+                i++;
+            } else if(input.indexOf(not,i)!=-1){
+                notCount++;
+                j++;
+            }
+        }
+                */
     }
 
     /**
@@ -59,7 +91,23 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        char[] gs = input.toCharArray();
+        int gCount = 0;
+        int j = 0;
+        while(j<input.length()){
+            if(input.charAt(j)=='g')
+                gCount+=1;
+                j++;
+        }
+        int happyGs = 0;
+        int i = 0;
+        while(i<input.length()){
+            if(input.charAt(i)=='g'&& input.charAt(i+1)=='g' || input.charAt(i)=='g'&& input.charAt(i-1)=='g'){
+                happyGs +=1;
+            }
+            i++;
+        }
+        return gCount ==happyGs;
     }
 
 
